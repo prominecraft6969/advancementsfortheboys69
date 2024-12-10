@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to January 4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e90ff, #32cd32); /* Blue to Green */
+            color: #ffffff;
+            text-align: center;
+        }
+        #container {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+        #message {
+            font-size: 1.2rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        iframe {
+            border: none;
+            width: 560px;
+            height: 315px;
+        }
+        @media (max-width: 600px) {
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Countdown to January 4, 2025</h1>
+        <p id="message">Loading...</p>
+    </div>
+    <iframe 
+        src="https://www.youtube.com/embed/4uOx36ROP_8?autoplay=1&mute=1" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+
+    <script>
+        function updateActivity() {
+            const today = new Date();
+            const minecraftDate = new Date(2025, 0, 4); // January 4, 2025
+            const oneDay = 1000 * 60 * 60 * 24;
+            const daysLeft = Math.ceil((minecraftDate - today) / oneDay);
+            const messageElement = document.getElementById('message');
+
+            if (today.getMonth() === 0 && today.getDate() === 4) {
+                messageElement.textContent = "Today is the day!";
+            } else {
+                messageElement.textContent = `${daysLeft} days tick by.`;
+            }
+        }
+
+        // Call the function immediately and set an interval to update every day
+        updateActivity();
+        setInterval(updateActivity, 1000 * 60 * 60 * 24);
+    </script>
+</body>
+</html>
