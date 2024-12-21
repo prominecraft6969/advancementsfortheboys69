@@ -44,7 +44,7 @@
 </head>
 <body>
     <div id="container">
-        <h1>Countdown to January 4, 2025</h1>
+        <h1>Countdown to January 3, 2025</h1>
         <p id="message">Loading...</p>
     </div>
     <iframe 
@@ -56,12 +56,12 @@
     <script>
         function updateActivity() {
             const today = new Date();
-            const minecraftDate = new Date(2025, 0, 4); // January 4, 2025
+            const minecraftDate = new Date(2025, 0, 3); // January 3, 2025
             const oneDay = 1000 * 60 * 60 * 24;
             const daysLeft = Math.ceil((minecraftDate - today) / oneDay);
             const messageElement = document.getElementById('message');
 
-            if (today.getMonth() === 0 && today.getDate() === 4) {
+            if (today.getMonth() === 0 && today.getDate() === 3) {
                 messageElement.textContent = "Today is the day!";
             } else {
                 messageElement.textContent = `${daysLeft} days tick by.`;
